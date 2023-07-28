@@ -2,23 +2,22 @@ class Solution {
     public int strStr(String hay, String needle) {
         int i=0;
         int j=0;
-        int ans=-1;
+        int ans=0;
         while(i<hay.length() && j<needle.length()){
             if(hay.charAt(i)==needle.charAt(j)){
                 i++;
                 j++;
-                if(j==needle.length()){
-                ans=i-j;
-            }
+                
+            
             }else{
-                i++;
-                i = i - j;
-                j=0;                
+                i=ans+1;
+                j=0;  
+                ans=i;              
             }
             
             
         }
-        if(ans>=0) return ans;
+        if(j==needle.length()) return ans;
         return -1;
     }
 }
