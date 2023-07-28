@@ -7,14 +7,15 @@ class Solution {
             if(hay.charAt(i)==needle.charAt(j)){
                 i++;
                 j++;
+                if(j==needle.length()){
+                ans=i-j;
+            }
             }else{
                 i++;
                 i = i - j;
                 j=0;                
             }
-            if(j==needle.length()){
-                ans=i-j;
-            }
+            
             
         }
         if(ans>=0) return ans;
