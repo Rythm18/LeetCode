@@ -22,7 +22,6 @@ class Solution {
         }
         
         Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
         int j=0,i=1;
         int cnt=1;
         int ans=Integer.MIN_VALUE;
