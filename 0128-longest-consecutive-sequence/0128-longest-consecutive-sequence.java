@@ -25,21 +25,21 @@ class Solution {
         System.out.println(Arrays.toString(arr));
         int j=0,i=1;
         int cnt=1;
-        int res=Integer.MIN_VALUE;
+        int ans=Integer.MIN_VALUE;
         while(i<arr.length)
         {
             //int ans=;
             if(Math.abs(arr[i]-arr[j])==1) {
                 cnt++;
-                res=Math.max(res,cnt);
+                ans=Math.max(ans,cnt);
             }else{
                 cnt=1;
             }
             i++;
             j++;
         }
-        res=Math.max(res,cnt);
-        if(res==Integer.MIN_VALUE) return 0;
-        return res;
+        ans=Math.max(ans,cnt);
+        if(ans==Integer.MIN_VALUE) return 0;
+        return ans;
     }
 }
