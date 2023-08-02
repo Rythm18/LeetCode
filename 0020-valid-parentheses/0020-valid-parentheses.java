@@ -1,11 +1,11 @@
 class Solution {
     public boolean isValid(String s) {
-        if(s.length()==1){
-            return false;
-        }
-        if(s.charAt(0)==']'||s.charAt(0)=='}'||s.charAt(0)==')'){
-            return false;
-        }
+        // if(s.length()==1){
+        //     return false;
+        // }
+        // if(s.charAt(0)==']'||s.charAt(0)=='}'||s.charAt(0)==')'){
+        //     return false;
+        // }
         Stack<Character> stack = new Stack<>();
         for(int i=0;i<s.length();i++)
         {
