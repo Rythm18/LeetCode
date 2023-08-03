@@ -9,36 +9,17 @@ class Solution {
         {
            list.add(nums[i]);
         }
-
-        int[] arr = new int[list.size()];
-
-        Iterator<Integer> it = list.iterator();
-
-        int k=0;
-
-        while(it.hasNext()){
-            arr[k]=it.next().intValue();
-            k++;
-        }
-        
-        Arrays.sort(arr);
-        int j=0,i=1;
-        int cnt=1;
-        int ans=Integer.MIN_VALUE;
-        while(i<arr.length)
-        {
-            //int ans=;
-            if(Math.abs(arr[i]-arr[j])==1) {
-                cnt++;
+        int ans=1;
+        for(int num:nums){
+            if(!list.contains(num-1)){
+                int cnt=1;
+                while(list.contains(num+1)){
+                    num++;
+                    cnt++;
+                }
                 ans=Math.max(ans,cnt);
-            }else{
-                cnt=1;
             }
-            i++;
-            j++;
         }
-        ans=Math.max(ans,cnt);
-        if(ans==Integer.MIN_VALUE) return 0;
         return ans;
     }
 }
