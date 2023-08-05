@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isIsomorphic(string s, string t) 
     {
-        map<char,char> m,n;
+        unordered_map<char,char> m,n;
 
         for(int i=0; i<s.size(); i++)
         {
