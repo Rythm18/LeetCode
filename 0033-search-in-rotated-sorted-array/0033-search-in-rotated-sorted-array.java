@@ -16,7 +16,7 @@ class Solution {
 
     }
 
-    public int bSearch(int[] nums, int t, int s,int e)
+    int bSearch(int[] nums, int t, int s,int e)
     {
         while(s<=e){
             int mid=s+(e-s)/2;
@@ -32,7 +32,7 @@ class Solution {
         return -1;
     }
 
-    public int pivot(int[] nums)
+    int pivot(int[] nums)
     {
         int i=0;
         int j=nums.length-1;
