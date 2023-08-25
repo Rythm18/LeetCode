@@ -8,13 +8,7 @@ class Solution {
                 j--;
             }
             else{
-                boolean c=isPalindrome(s,i,j-1);
-                boolean d=isPalindrome(s,i+1,j);
-                if(c || d){
-                    return true;
-                }else{
-                    return false;
-                }
+                return isPalindrome(s,i,j-1) || isPalindrome(s,i+1,j);
             }
         }
     
