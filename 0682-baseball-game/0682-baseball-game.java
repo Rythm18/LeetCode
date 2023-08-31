@@ -1,37 +1,34 @@
 class Solution {
-    public int calPoints(String[] operations) {
-        Stack<String> stk = new Stack<>();
-    
-        for(int i=0;i<operations.length;i++)
-        {
-            String ch=operations[i];
-            if(ch.charAt(0)=='+'){
-                int k=Integer.parseInt(String.valueOf(stk.peek()));
-                stk.pop();
-                int j=Integer.parseInt(String.valueOf(stk.peek()));
-                stk.pop();
-                int ans=k+j;
-                stk.push(String.valueOf(j));
-                stk.push(String.valueOf(k));
-                stk.push(String.valueOf(ans));
-            }
-            else if(ch.charAt(0)=='D'){
-                int k=Integer.parseInt(stk.peek());
-                int d=k*2;
-                stk.push(String.valueOf(d));
-            }
-            else if(ch.charAt(0)=='C'){
-                stk.pop();
-            }
-            else{
-                stk.push(ch);
-            }
+    public int calPoints(String[] ops) {
+        Stack<Integer> stack = new Stack<>();
+          
+        for(String s : ops){
+            
+              if( s.equals("C")){
+                 stack.pop();
+             }
+             else if(s.equals("D")){
+                 stack.push(2* stack.peek());
+             }
+              else if(s.equals("+")){
+                 
+                  if(stack.size() >=2){
+                     int res1= stack.pop();
+                     int res2= stack.pop();
+                     int res= res1+res2;
+                     stack.push(res2);
+                     stack.push(res1);
+                     stack.push(res); 
+                  }
+             }
+             else{
+                 stack.push(Integer.parseInt(s));
+             }
         }
-        int sum=0;
-        while(!stk.empty()){
-            sum+=Integer.valueOf(stk.peek());
-            stk.pop();
-        }
-        return sum;
+        int ans =0;
+         while(!stack.isEmpty()){
+            ans += stack.pop();
+         }
+        return ans;
     }
 }
